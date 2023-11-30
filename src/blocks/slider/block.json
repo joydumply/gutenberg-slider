@@ -1,0 +1,51 @@
+{
+	"apiVersion": 3,
+	"name": "nikita-test-block/slider",
+	"version": "0.1.0",
+	"title": "Slider Block",
+	"category": "nikita-dev-gutenberg-blocks",
+	"icon": "format-gallery",
+	"description": "Custom Slider Block for Gutenberg",
+	"supports": {
+		"html": false,
+		"anchor": true
+	},
+	"attributes": {
+		"content": {
+			"type": "string",
+			"default": "Hello World!"
+		},
+		"color": {
+			"type": "string",
+			"default": "#00ff00"
+		},
+		"automaticScroll": {
+			"type": "boolean",
+			"default": false
+		},
+		"showArrows": {
+			"type": "boolean",
+			"default": false
+		},
+		"showDots": {
+			"type": "boolean",
+			"default": false
+		},
+		"slidesToShowDesktop": {
+			"type": "number",
+			"default": 3
+		},
+		"slidesToShowTablet": {
+			"type": "number",
+			"default": 3
+		},
+		"slidesToShowMobile": {
+			"type": "number",
+			"default": 1
+		}
+	},
+	"textdomain": "nikita-test-block",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css"
+}

@@ -1,0 +1,20 @@
+{
+  "apiVersion": 3,
+  "name": "nikita-test-block/slide",
+  "version": "0.1.0",
+  "title": "Slide Block",
+  "category": "nikita-dev-gutenberg-blocks",
+  "icon": "cover-image",
+  "description": "",
+  "parent": [
+    "nikita-test-block/slider"
+  ],
+  "supports": {
+    "html": false,
+    "anchor": true
+  },
+  "textdomain": "nikita-test-block",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css"
+}
