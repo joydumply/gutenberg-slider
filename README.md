@@ -11,7 +11,7 @@ This Slider Custom Gutenberg Block was developed for a test task
 
 Gutenberg Block requires working Wordpress project
 
-1. Upload the plugin files to the `/wp-content/plugins/test-block` directory, or install the plugin through the WordPress plugins screen directly.
+1. Upload the plugin files to the `/wp-content/plugins/slider-test` directory, or install the plugin through the WordPress plugins screen directly.
 2. Activate the plugin through the 'Plugins' screen in WordPress
 
 ---
