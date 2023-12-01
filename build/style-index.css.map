@@ -1,1 +1,0 @@
-{"version":3,"file":"./style-index.css","mappings":";;;;;;;AAAA;EACC;EACA;EACA;AACD,C","sources":["webpack://test-block/./src/blocks/slider/style.scss"],"sourcesContent":[".wp-block-create-block-boilerplate {\n\tbackground-color: #21759b;\n\tcolor: #fff;\n\tpadding: 2px;\n}\n"],"names":[],"sourceRoot":""}

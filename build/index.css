@@ -1,25 +1,2 @@
-/*!*****************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/slide/editor.scss ***!
-  \*****************************************************************************************************************************************************************************************************************************************************/
-/*
-* Style Works for Editor Only
-*/
-.slide_wrap .block-editor-inner-blocks {
-  padding: 5px;
-  border: 1px dotted #000;
-}
-/*!******************************************************************************************************************************************************************************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[4].use[1]!./node_modules/postcss-loader/dist/cjs.js??ruleSet[1].rules[4].use[2]!./node_modules/sass-loader/dist/cjs.js??ruleSet[1].rules[4].use[3]!./src/blocks/slider/editor.scss ***!
-  \******************************************************************************************************************************************************************************************************************************************************/
-.slider_block_wrap {
-  border: 1px solid #000;
-  padding: 15px;
-}
-.slider_block_wrap .slider_title {
-  margin-bottom: 10px;
-}
-.slider_block_wrap .block-editor-block-list__layout {
-  padding-bottom: 65px;
-}
-
-/*# sourceMappingURL=index.css.map*/
+.slide_wrap .block-editor-inner-blocks{border:1px dotted #000;padding:5px}
+.slider_block_wrap{border:1px solid #000;padding:15px}.slider_block_wrap .slider_title{margin-bottom:10px}.slider_block_wrap .block-editor-block-list__layout{padding-bottom:65px}
