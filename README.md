@@ -3,6 +3,7 @@
 ## Description
 
 This Slider Custom Gutenberg Block was developed for a test task
+
 **Slider block** contains **Slide block** as a child which contains all Gutenberg blocks as a child, exclude **Slider block** and **Slide block**
 
 Slider Block using [slick-slider](https://kenwheeler.github.io/slick/) and some demo styles for appear arrows and dots.
