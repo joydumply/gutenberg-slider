@@ -120,15 +120,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-/**
- * Internal dependencies
- */
-
-
-
-/**
- * Block Registration
- */
 
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_2__, {
   edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -152,17 +143,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
 
-// import { __ } from '@wordpress/i18n';
 
 function save({
   attributes
 }) {
   const {
-    content,
-    color
+    automaticScroll,
+    showArrows,
+    showDots,
+    slidesToShowDesktop,
+    slidesToShowTablet,
+    slidesToShowMobile
   } = attributes;
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
+    className: "custom-gutenberg-slider"
+  });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
+    ...blockProps,
+    "data-automatic-scroll": automaticScroll,
+    "data-show-arrows": showArrows,
+    "data-show-dots": showDots,
+    "data-slides-to-show-desktop": slidesToShowDesktop,
+    "data-slides-to-show-tablet": slidesToShowTablet,
+    "data-slides-to-show-mobile": slidesToShowMobile
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.Content, null));
 }
 
@@ -248,7 +251,7 @@ module.exports = window["wp"]["i18n"];
   \**************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"apiVersion":3,"name":"nikita-test-block/slider","version":"0.1.0","title":"Slider Block","category":"nikita-dev-gutenberg-blocks","icon":"format-gallery","description":"Custom Slider Block for Gutenberg","supports":{"html":false,"anchor":true},"attributes":{"content":{"type":"string","default":"Hello World!"},"color":{"type":"string","default":"#00ff00"},"automaticScroll":{"type":"boolean","default":false},"showArrows":{"type":"boolean","default":false},"showDots":{"type":"boolean","default":false},"slidesToShowDesktop":{"type":"number","default":3},"slidesToShowTablet":{"type":"number","default":3},"slidesToShowMobile":{"type":"number","default":1}},"textdomain":"nikita-test-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"apiVersion":3,"name":"nikita-test-block/slider","version":"0.1.0","title":"Slider Block","category":"nikita-dev-gutenberg-blocks","icon":"format-gallery","description":"Custom Slider Block for Gutenberg","supports":{"html":false,"anchor":true},"attributes":{"automaticScroll":{"type":"boolean","default":false},"showArrows":{"type":"boolean","default":false},"showDots":{"type":"boolean","default":false},"slidesToShowDesktop":{"type":"number","default":3},"slidesToShowTablet":{"type":"number","default":3},"slidesToShowMobile":{"type":"number","default":1}},"textdomain":"nikita-test-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

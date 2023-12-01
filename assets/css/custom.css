@@ -1,0 +1,47 @@
+.custom-gutenberg-slider .slick-dots {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+	gap: 10px;
+}
+.custom-gutenberg-slider .slick-dots button {
+	font-size: 0;
+	background-color: transparent;
+	border: 2px solid #333;
+	border-radius: 50%;
+	width: 10px;
+	height: 10px;
+	padding: 0;
+	cursor: pointer;
+	transition: all linear 0.4s;
+}
+.custom-gutenberg-slider .slick-dots button:hover {
+	border-color: #7700ff;
+}
+.custom-gutenberg-slider .slick-dots .slick-active button {
+	border-color: #7700ff;
+	background-color: #7700ff;
+}
+.custom-gutenberg-slider .slick-arrow {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: transparent;
+	border: 0;
+	font-size: 20px;
+	color: #333;
+	transition: color 0.3s ease;
+	cursor: pointer;
+}
+.custom-gutenberg-slider .slick-arrow:hover {
+	color: #7700ff;
+}
+.custom-gutenberg-slider .slick-arrow.slick-next {
+	right: -40px;
+}
+.custom-gutenberg-slider .slick-arrow.slick-prev {
+	left: -40px;
+}

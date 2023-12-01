@@ -4,18 +4,12 @@ import {
 	InspectorControls,
 	InnerBlocks,
 } from "@wordpress/block-editor";
-import { PanelBody, ColorPalette } from "@wordpress/components";
+import { PanelBody } from "@wordpress/components";
 const { Fragment } = wp.element;
 
-// editor style
 import "./editor.scss";
 
-// colors
-import colors from "../../utilities/colors-palette";
-
 export default function Edit({ attributes, setAttributes }) {
-	const { color } = attributes;
-
 	// ! exclude Slider Block or this block inside this block
 
 	const excludedBlocks = [
@@ -27,6 +21,7 @@ export default function Edit({ attributes, setAttributes }) {
 		.getBlockTypes()
 		.map((block) => block.name)
 		.filter((blockName) => !excludedBlocks.includes(blockName));
+
 	return (
 		<Fragment>
 			<InspectorControls>

@@ -21,7 +21,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @wordpress/components */ "@wordpress/components");
 /* harmony import */ var _wordpress_components__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_components__WEBPACK_IMPORTED_MODULE_3__);
 /* harmony import */ var _editor_scss__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./editor.scss */ "./src/blocks/slide/editor.scss");
-/* harmony import */ var _utilities_colors_palette__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utilities/colors-palette */ "./src/utilities/colors-palette.js");
 
 
 
@@ -30,19 +29,10 @@ const {
   Fragment
 } = wp.element;
 
-// editor style
-
-
-// colors
-
 function Edit({
   attributes,
   setAttributes
 }) {
-  const {
-    color
-  } = attributes;
-
   // ! exclude Slider Block or this block inside this block
 
   const excludedBlocks = ["nikita-test-block/slider", "nikita-test-block/slide"];
@@ -78,15 +68,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-/**
- * Internal dependencies
- */
-
-
-
-/**
- * Block Registration
- */
 
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_2__, {
   edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -110,17 +91,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
 
-// import { __ } from '@wordpress/i18n';
 
 function save({
   attributes
 }) {
-  const {
-    content,
-    color
-  } = attributes;
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
+    className: "custom-gutenberg-slide"
+  });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
+    ...blockProps
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.Content, null));
 }
 
@@ -244,15 +223,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-/**
- * Internal dependencies
- */
-
-
-
-/**
- * Block Registration
- */
 
 (0,_wordpress_blocks__WEBPACK_IMPORTED_MODULE_0__.registerBlockType)(_block_json__WEBPACK_IMPORTED_MODULE_2__, {
   edit: _edit__WEBPACK_IMPORTED_MODULE_3__["default"],
@@ -276,17 +246,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__);
 
-// import { __ } from '@wordpress/i18n';
 
 function save({
   attributes
 }) {
   const {
-    content,
-    color
+    automaticScroll,
+    showArrows,
+    showDots,
+    slidesToShowDesktop,
+    slidesToShowTablet,
+    slidesToShowMobile
   } = attributes;
+  const blockProps = _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save({
+    className: "custom-gutenberg-slider"
+  });
   return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)("div", {
-    ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps.save()
+    ...blockProps,
+    "data-automatic-scroll": automaticScroll,
+    "data-show-arrows": showArrows,
+    "data-show-dots": showDots,
+    "data-slides-to-show-desktop": slidesToShowDesktop,
+    "data-slides-to-show-tablet": slidesToShowTablet,
+    "data-slides-to-show-mobile": slidesToShowMobile
   }, (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InnerBlocks.Content, null));
 }
 
@@ -303,42 +285,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _blocks_slider_index__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./blocks/slider/index */ "./src/blocks/slider/index.js");
 
 
-
-/***/ }),
-
-/***/ "./src/utilities/colors-palette.js":
-/*!*****************************************!*\
-  !*** ./src/utilities/colors-palette.js ***!
-  \*****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-const {
-  __
-} = wp.i18n;
-const colors = [{
-  name: __("Black", "custom_slider"),
-  color: "#000000"
-}, {
-  name: __("White", "custom_slider"),
-  color: "#ffffff"
-}, {
-  name: __("Red", "custom_slider"),
-  color: "#ff0000"
-}, {
-  name: __("Green", "custom_slider"),
-  color: "#00ff00"
-}, {
-  name: __("Blue", "custom_slider"),
-  color: "#0000ff"
-}, {
-  name: __("Yellow", "custom_slider"),
-  color: "#ffff00"
-}];
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (colors);
 
 /***/ }),
 
@@ -456,7 +402,7 @@ module.exports = JSON.parse('{"apiVersion":3,"name":"nikita-test-block/slide","v
   \**************************************/
 /***/ ((module) => {
 
-module.exports = JSON.parse('{"apiVersion":3,"name":"nikita-test-block/slider","version":"0.1.0","title":"Slider Block","category":"nikita-dev-gutenberg-blocks","icon":"format-gallery","description":"Custom Slider Block for Gutenberg","supports":{"html":false,"anchor":true},"attributes":{"content":{"type":"string","default":"Hello World!"},"color":{"type":"string","default":"#00ff00"},"automaticScroll":{"type":"boolean","default":false},"showArrows":{"type":"boolean","default":false},"showDots":{"type":"boolean","default":false},"slidesToShowDesktop":{"type":"number","default":3},"slidesToShowTablet":{"type":"number","default":3},"slidesToShowMobile":{"type":"number","default":1}},"textdomain":"nikita-test-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
+module.exports = JSON.parse('{"apiVersion":3,"name":"nikita-test-block/slider","version":"0.1.0","title":"Slider Block","category":"nikita-dev-gutenberg-blocks","icon":"format-gallery","description":"Custom Slider Block for Gutenberg","supports":{"html":false,"anchor":true},"attributes":{"automaticScroll":{"type":"boolean","default":false},"showArrows":{"type":"boolean","default":false},"showDots":{"type":"boolean","default":false},"slidesToShowDesktop":{"type":"number","default":3},"slidesToShowTablet":{"type":"number","default":3},"slidesToShowMobile":{"type":"number","default":1}},"textdomain":"nikita-test-block","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css"}');
 
 /***/ })
 

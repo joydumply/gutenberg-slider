@@ -11,14 +11,6 @@
 		"anchor": true
 	},
 	"attributes": {
-		"content": {
-			"type": "string",
-			"default": "Hello World!"
-		},
-		"color": {
-			"type": "string",
-			"default": "#00ff00"
-		},
 		"automaticScroll": {
 			"type": "boolean",
 			"default": false

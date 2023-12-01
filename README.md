@@ -1,9 +1,13 @@
-# Slider Custom Gutenberg Block v.0.1.1
+# Slider Custom Gutenberg Block v.1.0.0 Released
 
 ## Description
 
 This Slider Custom Gutenberg Block was developed for a test task
 **Slider block** contains **Slide block** as a child which contains all Gutenberg blocks as a child, exclude **Slider block** and **Slide block**
+
+Slider Block using [slick-slider](https://kenwheeler.github.io/slick/) and some demo styles for appear arrows and dots.
+
+It's up to you to write your own styles in your theme, so you can remove demo custom.css from `/assets/css`.
 
 ---
 
@@ -39,9 +43,10 @@ Gutenberg Block requires working Wordpress project
    - Show dots under the slider (Yes/No)
    - How many slides to show on Desktop/Tablet/Mobile
 
+1. [x] Implement save.js for blocks (frontend part)
+
+1. [x] Implement slider scripts for init slider
+
+1. [x] Implement demo styles for arrows and dots
+
 ---
-
-## Must be done
-
-1. [ ] Implement save.js for blocks (frontend part)
-1. [ ] Implement slider scripts for init slider

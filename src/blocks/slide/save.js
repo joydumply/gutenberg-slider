@@ -1,10 +1,11 @@
-// import { __ } from '@wordpress/i18n';
-import { useBlockProps, RichText, InnerBlocks } from "@wordpress/block-editor";
+import { useBlockProps, InnerBlocks } from "@wordpress/block-editor";
 
 export default function save({ attributes }) {
-	const { content, color } = attributes;
+	const blockProps = useBlockProps.save({
+		className: "custom-gutenberg-slide",
+	});
 	return (
-		<div {...useBlockProps.save()}>
+		<div {...blockProps}>
 			<InnerBlocks.Content />
 		</div>
 	);
